@@ -1,0 +1,18 @@
+from langchain_openai import OpenAIEmbeddings
+from dotenv import load_dotenv
+
+load_dotenv()
+
+embeddings = OpenAIEmbeddings(model = "text-embedding-3-small", dimensions=32)
+
+documents = [
+    "Hello, how are you?",
+    "I am fine, thank you.",
+    "What is your name?",
+    "My name is John.",
+    "What is your age?",
+    "I am 20 years old.",
+]
+
+embedding = embeddings.embed_documents(documents)
+print(embedding)
